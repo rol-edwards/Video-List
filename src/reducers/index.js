@@ -5,7 +5,6 @@ const videos = (state = [], action) => {
 	switch (action.type) {
 
 		case 'REMOVE_VID':
-			console.log('removing video' + action.id)
 			var newState = {...state};
 			var videos = [];
 			newState.videos.forEach(function(video){
@@ -18,16 +17,11 @@ const videos = (state = [], action) => {
 			
 		case 'ADD_VID':
 			//console.log('new title')
-			console.log('the new url is at present: ' + state.newVid.url)
 			var newState = {...state};
-			console.log('and now the new state: ' + newState.newVid.url)
 			var new_url1 = newState.newVid.url.split('?v=')[1];
-			console.log('this is code: ' + new_url1)
 			var newUrl = 'https://www.youtube.com/embed/' + new_url1 + '?ecver=1'
 			//var newDur = getDur(new_url1, apiKey);
 			var newDur = 'placeholder'
-			console.log('duration is: ' + newDur)
-			console.log(newState.videos[0].title);
 			var newTitle = newState.newVid.title;
 			//var newUrl = newState.newVid.url;
 			var videos = [];
@@ -37,7 +31,6 @@ const videos = (state = [], action) => {
 				videos.push(video)
 			})
 			newState.videos = videos;
-			console.log(JSON.stringify(newState))
 			return newState
 
 		case 'NEW_TITLE':
@@ -46,27 +39,33 @@ const videos = (state = [], action) => {
 			return newState
 
 		case 'NEW_URL':
-		console.log('new url will be: ' + action.url)
 			var newState = {...state};
 			newState.newVid.url = action.url;
 			return newState
 
 		case 'TOGGLE_EDIT':
-			//console.log('toggling')
+			console.log('toggling')
 			var newState = {...state};
 			var videos = [];
+			var editVid = {};
 			newState.videos.forEach(function(video){
 				if (video.id === action.id){
 					video.editable = true;
+					editVid.title = video.title;
+					editVid.url = video.url;
 				}
 				videos.push(video)
 			})
+			newState.editVid = editVid;
 			newState.videos = videos;
 			return newState
 
 		case 'EDIT_TITLE':
+			console.log('new title is: ' + action.title)
 			var newState = {... state};
-			newState.editVid.title = action.title;
+			var editVid = newState.editVid;
+			editVid.title = action.title;
+			newState.editVid = editVid;
 			return newState
 
 		case 'EDIT_URL':
@@ -75,7 +74,7 @@ const videos = (state = [], action) => {
 			return newState
 
 		case 'SUBMIT_EDIT':
-			console.log('submit edit' + action.id)
+			console.log('the state at time of submission: ' + JSON.stringify(state))
 			var newState = {...state};
 			var newTitle = newState.editVid.title;
 			var newUrl = newState.editVid.url;
@@ -89,14 +88,16 @@ const videos = (state = [], action) => {
 				videos.push(video)
 			})
 			newState.videos = videos;
-			console.log(JSON.stringify(newState))
 			return newState 
 
 		case 'WORK_PLAYER':
-			console.log('url is: ' + action.url)
 			var newState = {...state};
 			newState.playVid = action.url;
 			return newState;
+
+		case 'SHOW_STATE':
+			console.log('this is the state: ' + JSON.stringify(state))
+			return state
 
 		default:
 			return state

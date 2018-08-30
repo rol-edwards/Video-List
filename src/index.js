@@ -12,7 +12,7 @@ const initialState = {
 		{id: 1, title: 'gergf', duration: 'tretre', url: 'https://www.youtube.com/embed/t07E5JaT8r4?ecver=1', editable: false},
 	],
 	newVid: {},
-	editVid: {},
+	editVid: {title: '', url: ''},
 	playVid: 'off'
 }
 

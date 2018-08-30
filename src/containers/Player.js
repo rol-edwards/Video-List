@@ -14,15 +14,10 @@ import { workPlayer } from '../actions'
 import Player from '../components/Player'
 
 const getList = (videos) => {
-	videos.forEach(function(video){
-		console.log('id is: ' + video.id)
-		console.log(videos.length)
-	})
 	return videos
 }
 
 const mapStateToProps = state => ({
-
 	url: state.playVid
 })
 

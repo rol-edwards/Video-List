@@ -45,3 +45,8 @@ export const workPlayer = url => ({
 	type: 'WORK_PLAYER',
 	url: url,
 })
+
+export const showState = () => ({
+	type: 'SHOW_STATE',
+	
+})
