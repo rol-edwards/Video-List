@@ -92,6 +92,12 @@ const videos = (state = [], action) => {
 			console.log(JSON.stringify(newState))
 			return newState 
 
+		case 'WORK_PLAYER':
+			console.log('url is: ' + action.url)
+			var newState = {...state};
+			newState.playVid = action.url;
+			return newState;
+
 		default:
 			return state
 	}

@@ -41,3 +41,7 @@ export const submitEdit = id => ({
 	id: id,
 })
 
+export const workPlayer = url => ({
+	type: 'WORK_PLAYER',
+	url: url,
+})

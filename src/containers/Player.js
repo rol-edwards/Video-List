@@ -9,8 +9,9 @@ import { editTitle } from '../actions'
 import { editUrl } from '../actions'
 import { submitEdit } from '../actions'
 import { workPlayer } from '../actions'
+
 //import components
-import List from '../components/List'
+import Player from '../components/Player'
 
 const getList = (videos) => {
 	videos.forEach(function(video){
@@ -20,25 +21,16 @@ const getList = (videos) => {
 	return videos
 }
 
-const mapStateToProps = state => (
+const mapStateToProps = state => ({
 
-console.log('this is the state: ' + JSON.stringify(state)),{
-
-	videos: getList(state.videos)
+	url: state.playVid
 })
 
 const mapDispatchToProps = dispatch => ({
-	removeVid: id => dispatch(removeVid(id)),
-	toggleEdit: id => dispatch(toggleEdit(id)),
-	newTitle: id => dispatch(newTitle(id)),
-	newUrl: id => dispatch(newUrl(id)),
-	editTitle: e => dispatch(editTitle(e)),
-	editUrl: e => dispatch(editUrl(e)),
-	submitEdit: id => dispatch(submitEdit(id)),
-	workPlayer: url => dispatch(workPlayer(url))
+	workPlayer: () => dispatch(workPlayer('off'))
 })
 
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
- )(List)
+ )(Player)

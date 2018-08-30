@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Item = ({onClick, toggleEdit, editTitle, editUrl, submitEdit, title, duration, url, id, editable}) => (
+const Item = ({onClick, toggleEdit, editTitle, editUrl, submitEdit, workPlayer, title, duration, url, id, editable}) => (
 	editable ?
 		<tr>
 			<td>
@@ -19,7 +19,7 @@ const Item = ({onClick, toggleEdit, editTitle, editUrl, submitEdit, title, durat
 		</tr>
 	:
 		<tr>
-			<td>{title}</td>
+			<td onClick={workPlayer}>{title}</td>
 			<td>{duration}</td>
 			<td>{url}</td>
 			<td>
@@ -46,6 +46,7 @@ Item.propTypes = {
   editTitle: PropTypes.func.isRequired,
   editUrl: PropTypes.func.isRequired,
   submitEdit: PropTypes.func.isRequired,
+  workPlayer: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   duration: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,

@@ -9,7 +9,7 @@ import Item from './Item'
 //import { editUrl } from '../actions'
 //import { submitEdit } from '../actions'
 
-const List = ({videos, removeVid, toggleEdit, editTitle, editUrl, submitEdit}) => (
+const List = ({videos, removeVid, toggleEdit, editTitle, editUrl, submitEdit, workPlayer}) => (
 	<div>
 		<table class='list'>
 			<tbody>
@@ -28,6 +28,7 @@ const List = ({videos, removeVid, toggleEdit, editTitle, editUrl, submitEdit}) =
 			        editTitle={(e) => editTitle(e.target.value)}
 			        editUrl={(e) => editUrl(e.target.value)}
 			        submitEdit={() => submitEdit(video.id)}
+			        workPlayer={(url) => workPlayer(video.url)}
 			      />
 			    )}
 			</tbody>
@@ -53,6 +54,7 @@ List.propTypes = {
   editTitle: PropTypes.func.isRequired,
   editUrl: PropTypes.func.isRequired,
   submitEdit: PropTypes.func.isRequired,
+  workPlayer: PropTypes.func.isRequired,
 }
 
 
