@@ -1,4 +1,4 @@
- let nextId = 2
+ let nextId = 0
 
  export const addVid = info => ({
  	type: 'ADD_VID',
@@ -50,3 +50,4 @@ export const showState = () => ({
 	type: 'SHOW_STATE',
 	
 })
+

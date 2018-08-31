@@ -9,6 +9,7 @@ const Item = ({onClick, toggleEdit, editTitle, editUrl, submitEdit, workPlayer, 
 			</td>
 			<td></td>
 			<td>
+				<label htmlFor='url'>URL </label>
 				<input type='text' id='url' onChange={editUrl} value={editedUrl}/>
 			</td>
 			<td></td>
@@ -21,7 +22,6 @@ const Item = ({onClick, toggleEdit, editTitle, editUrl, submitEdit, workPlayer, 
 		<tr>
 			<td onClick={workPlayer} class='title'><p>{title}</p></td>
 			<td>{duration}</td>
-			<td>{url}</td>
 			<td>
 				<iframe 
 					width="85" 
@@ -41,18 +41,18 @@ const Item = ({onClick, toggleEdit, editTitle, editUrl, submitEdit, workPlayer, 
 
 Item.propTypes = {
 	id: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
-  toggleEdit: PropTypes.func.isRequired,
-  editTitle: PropTypes.func.isRequired,
-  editUrl: PropTypes.func.isRequired,
-  submitEdit: PropTypes.func.isRequired,
-  workPlayer: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  duration: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  editable: PropTypes.bool.isRequired,
-  editedTitle: PropTypes.string.isRequired,
-  editedUrl: PropTypes.string.isRequired,
+	onClick: PropTypes.func.isRequired,
+	toggleEdit: PropTypes.func.isRequired,
+	editTitle: PropTypes.func.isRequired,
+	editUrl: PropTypes.func.isRequired,
+	submitEdit: PropTypes.func.isRequired,
+	workPlayer: PropTypes.func.isRequired,
+	title: PropTypes.string.isRequired,
+	duration: PropTypes.string.isRequired,
+	url: PropTypes.string.isRequired,
+	editable: PropTypes.bool.isRequired,
+	editedTitle: PropTypes.string.isRequired,
+	editedUrl: PropTypes.string.isRequired,
 }
 
 export default Item

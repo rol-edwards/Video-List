@@ -5,7 +5,6 @@ const Player = ({url, workPlayer}) => (
 	url === 'off' ?
 
 	<div></div>
-
 	:
 	<div class='player'>
 		<div>
@@ -25,7 +24,6 @@ const Player = ({url, workPlayer}) => (
 )
 
 Player.propTypes = {
-
     url: PropTypes.string.isRequired,
   	workPlayer: PropTypes.func.isRequired,
 }

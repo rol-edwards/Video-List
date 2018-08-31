@@ -6,6 +6,7 @@ const Add = ({ dispatch, newVidTitle, newVidUrl, newTitle, newUrl, addVid, showS
  	return (
  		<div class='add'>
  				<h2>Add new video</h2>
+ 				<p>Please copy the URL for a Youtube video from the address bar and give it a title</p>
  				<table>
  					<tr>
  						<td>Title</td>
@@ -21,7 +22,6 @@ const Add = ({ dispatch, newVidTitle, newVidUrl, newTitle, newUrl, addVid, showS
  					</tr>
  				</table>
  				<button type='submit' onClick={ () => addVid()}>Submit</button>
- 				<button onClick={showState}></button>
  		</div>
  	)
  }
@@ -31,7 +31,6 @@ const Add = ({ dispatch, newVidTitle, newVidUrl, newTitle, newUrl, addVid, showS
     newVid: PropTypes.shape({
       title: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
-
     }).isRequired,
     newTitle: PropTypes.func.isRequired,
     newUrl: PropTypes.func.isRequired,

@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-//import actions
 import { removeVid } from '../actions'
 import { toggleEdit } from '../actions'
 import { newTitle } from '../actions'
@@ -10,7 +9,6 @@ import { editUrl } from '../actions'
 import { submitEdit } from '../actions'
 import { workPlayer } from '../actions'
 import { showState } from '../actions'
-//import components
 import List from '../components/List'
 
 const getList = (videos) => {
