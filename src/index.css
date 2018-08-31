@@ -1,17 +1,7 @@
-body {
-  /*font: 14px "Century Gothic", Futura, sans-serif;*/
+body { 
   margin: 20px;
   font-family: "apercu",sans-serif;
-
-        background-color: red;
-}
-
-@media only screen and (min-device-width: 400px) {
-    body { 
-      margin: 20px;
-  font-family: "apercu",sans-serif;
   background-color: #f4f7f6;
-    }
 }
 
 .title {
@@ -31,17 +21,6 @@ h1 {
   font-weight: bold;
 }
 
-.top div:nth-child(3){
-  flex-basis: 20%;
-  text-align: center;
-  height: 70px;
-  background-color: #49c5b6;
-  color: white;
-}
-
-ol, ul {
-  padding-left: 30px;
-}
 
 .list td {
   width: 200px;
@@ -101,83 +80,33 @@ button p:nth-child(4) {
   color: red;
 }
 
-select {
-  background-color: white;
-  width: 150px;
-  -webkit-appearance: none;
-  border-radius: 0px;
-}
-
-select:after {
-  background-color: purple;
-}
-
-img {
-  width: 100%;
-  background-size: 100% 100%;
-  margin-top: 70px;
-  border: none;
-  margin-left: 0px;
-  margin-right: 0px;
-  padding: 0px;
-}
-
-
-.part {
-  background-color: lightgreen;
-}
-
-
-.text {
-  margin-top: 70px;
-  margin: 50px;
-  width: 100%;
-  float: left;
-
-}
-
-.input {
-  margin-bottom: 10px;
-  width: 90%;
-  height: 200px;
-  margin-right: 10px;
-  /*box-shadow: 5px 10px 8px #888888;*/
-}
-
-.input_div {
-  margin-top: 70px;
-  width: 50%;
-  float: left;
-}
-
-.new_vocab {
-  float: left;
-
-}
-
-.inline {
-  display: inline-block;
-  width: 79%;
-}
-
-.inline2 {
-  display: inline-block;
-  width: 20%;
-  height: 70px;
-  top: 0;
-  border: solid 1px;
-
-  }
-
-.div1 {
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-    /*border: 1px solid #aaaaaa;*/
-    background-color: lightgrey;
-    float: left;
-}
 
 .round {
   border-radius: 50%;
+}
+
+.add {
+  margin-top: 50px;
+}
+
+.player {
+  margin-bottom: 50px;
+}
+
+.player button {
+    border: 1px solid #cfcfcf;
+    color: #555;
+    background: #e9e9e9;
+    text-decoration: none;
+    height: 30px;
+    margin: 0px;
+    cursor: pointer;
+    position: relative;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 3px 1px #b1b1b1, #fafafa 0 -1px 0;
+    -webkit-box-shadow: 0 3px 1px #b1b1b1, #fafafa 0 -1px 0;
+    box-shadow: 0 3px 1px #b1b1b1, #fafafa 0 -1px 0;
+    margin: 5px;
 }

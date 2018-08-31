@@ -11,7 +11,7 @@ const initialState = {
 		{id: 0, title: 'dgre', duration: 'grt', url: 'https://www.youtube.com/embed/t07E5JaT8r4?ecver=1', editable: false},
 		{id: 1, title: 'gergf', duration: 'tretre', url: 'https://www.youtube.com/embed/t07E5JaT8r4?ecver=1', editable: false},
 	],
-	newVid: {},
+	newVid: {title: 'fsdf', url: 'fsdfds'},
 	editVid: {title: '', url: ''},
 	playVid: 'off'
 }

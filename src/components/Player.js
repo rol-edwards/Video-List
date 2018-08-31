@@ -4,10 +4,13 @@ import PropTypes from 'prop-types'
 const Player = ({url, workPlayer}) => (
 	url === 'off' ?
 
-	<div>Player would be here</div>
+	<div></div>
 
 	:
-	<div>
+	<div class='player'>
+		<div>
+			<button onClick={workPlayer}>Hide player</button>
+		</div>
 		<iframe 
 			width="850" 
 			height="480" 
@@ -17,7 +20,7 @@ const Player = ({url, workPlayer}) => (
 			allowfullscreen
 		>
 		</iframe>
-		<button onClick={workPlayer}>Collapse</button>
+
 	</div>
 )
 

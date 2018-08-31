@@ -5,12 +5,10 @@ const Item = ({onClick, toggleEdit, editTitle, editUrl, submitEdit, workPlayer, 
 	editable ?
 		<tr>
 			<td>
-				<label for='title'>Title</label>
 				<input type='text' id='title' onChange={editTitle} value={editedTitle}/>	
 			</td>
 			<td></td>
 			<td>
-				<label for='url'>URL</label>
 				<input type='text' id='url' onChange={editUrl} value={editedUrl}/>
 			</td>
 			<td></td>

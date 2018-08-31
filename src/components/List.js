@@ -35,7 +35,7 @@ const List = ({showState, videos, editVid, removeVid, toggleEdit, editTitle, edi
 			    )}
 			</tbody>
 		</table>
-		
+		<button onClick={showState}></button>
 	</div>
 )
 

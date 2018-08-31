@@ -16,6 +16,7 @@ var getDur = function(id, apiKey){
    // var mins = 12
    // var secs = 8
     var result = 'Duration: ' + mins +'mins' + secs + 'secs'
+    console.log(typeof result)
     return result
 })
   

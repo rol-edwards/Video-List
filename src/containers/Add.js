@@ -4,30 +4,26 @@ import { connect } from 'react-redux'
 import { addVid } from '../actions'
 import { newTitle } from '../actions'
 import { newUrl } from '../actions'
+import { showState } from '../actions'
+import Add from '../components/Add'
 
+const mapStateToProps = state => ({
+		
+		newVidTitle: state.newVid.title,
+		newVidUrl: state.newVid.url
+	}
+)
 
- const Add = ({ dispatch }) => {
- 	let input
- 	return (
- 		<div>
- 				<h2>Add new video</h2>
- 				<table>
- 					<tr>
- 						<td>Title</td>
- 						<td>
- 							<input ref={node => input = node} onChange={ (e) => dispatch(newTitle(e.target.value))}/>
- 						</td>
- 					</tr>
- 					<tr>
- 						<td>URL</td>
- 						<td>
- 							<input onChange={ (e) => dispatch(newUrl(e.target.value))}/>
- 						</td>
- 					</tr>
- 				</table>
- 				<button type='submit' onClick={ () => dispatch(addVid())}>Submit</button>
- 		</div>
- 	)
- }
+const mapDispatchToProps = dispatch => ({
+	
+	newTitle: id => dispatch(newTitle(id)),
+	newUrl: id => dispatch(newUrl(id)),
+	addVid: () => dispatch(addVid()),
+	showState: () => dispatch(showState())
 
-export default connect()(Add)
+})
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+ )(Add)

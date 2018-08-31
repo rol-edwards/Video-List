@@ -1,5 +1,6 @@
 import apiKey from '../config.js'
 import getDur from '../getDur.js'
+import validate from '../validate_url.js'
 
 const videos = (state = [], action) => {
 	switch (action.type) {
@@ -18,15 +19,19 @@ const videos = (state = [], action) => {
 		case 'ADD_VID':
 			//console.log('new title')
 			var newState = {...state};
-			var new_url1 = newState.newVid.url.split('?v=')[1];
+			var validatedUrl = validate(newState.newVid.url)
+			if (validatedUrl === 'error'){
+				return state
+			}
+			var new_url1 = validatedUrl.split('?v=')[1];
 			var newUrl = 'https://www.youtube.com/embed/' + new_url1 + '?ecver=1'
-			//var newDur = getDur(new_url1, apiKey);
-			var newDur = 'placeholder'
+			var newDur = getDur(new_url1, apiKey);
+			//var newDur = 'placeholder'
 			var newTitle = newState.newVid.title;
 			//var newUrl = newState.newVid.url;
 			var videos = [];
 			newState.videos.push({id: action.id, title: newTitle, duration: newDur, url: newUrl, editable: false});
-			newState.newVid = {};
+			newState.newVid = {title: '', url: ''};
 			newState.videos.forEach(function(video){
 				videos.push(video)
 			})
@@ -76,13 +81,16 @@ const videos = (state = [], action) => {
 		case 'SUBMIT_EDIT':
 			console.log('the state at time of submission: ' + JSON.stringify(state))
 			var newState = {...state};
-			var newTitle = newState.editVid.title;
-			var newUrl = newState.editVid.url;
+
+			var new_url1 = newState.editVid.url.split('?v=')[1];
+			var newUrl = 'https://www.youtube.com/embed/' + new_url1 + '?ecver=1'
+			//var newDur = getDur(new_url1, apiKey);
+			var newDur = 'placeholder'
 			var videos = [];
 			newState.videos.forEach(function(video){
 				if (video.id === action.id){
 					video.title = newState.editVid.title;
-					video.url = newState.editVid.url;
+					video.url = newUrl;
 					video.editable = false;
 				}
 				videos.push(video)
