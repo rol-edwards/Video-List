@@ -12,7 +12,7 @@ var getDur = function(id, apiKey){
     var min = String(mins);
     var sec = String(secs);
     var result = 'Duration: ' + min +'mins' + sec + 'secs'
-    console.log(typeof result)
+    console.log(result)
     return result
 })
   
